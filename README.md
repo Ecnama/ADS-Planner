@@ -1,41 +1,40 @@
 # ADS-Planner
-A tool to distribute INSA students in ADS sessions.
+A tool to distribute INSA students into ADS sessions.
 
 ## ADS
-ADS (Action Découverte des Spécialités) is a teaching module aimed at presenting the specialties of the engineering program at INSA to students in the preparatory program. This module is composed of 3 sessions. Each students is asked to rank the specialities by preference, in order to distribute then into the three half-day sessions. 
+ADS (Action Découverte des Spécialités) is a teaching module aimed at presenting the specialties of the engineering program at INSA to students in the preparatory program. This module consists of three sessions. Each student is asked to rank the specialties by preference to distribute them into the three half-day sessions.
 
 The students concerned by ADS are the following:
-- 2nd year students 
+- 2nd-year students 
 - Repeating students
 - 2/3 accomodations
 - EMIR and MICA students
-Each group are treated differently (details below).
+Each group is treated differently (details below).
 
 ## Inputs (spreadsheets)
-- Students choices
+- Students' choices
 - Traditionnal track students list
 - MICA students list
 - EMIR students list
 
 ## Outputs (spreadsheets)
 - List of students who have not responded
-- Students choices with an additionnal column with the final results
+- Students' choices with an additional column for the final results
 
 ## Technology
 ### Why R ?
-- Coherence: Integration with existing code already in R
+- Coherence: Integration with existing code already written in R
   - Generation of jury files
   - Assignment in departments
   - Generation of repeat contracts
   - ADS assignment
 
-- Maintenance: simpler with a single language
+- Maintenance: Simpler with a single language
 
-- Ease of manipulation of data frames with R
+- Ease of manipulation: R facilitates data frame manipulation
 
-- Longevity of the code over time compared to Python (version stability)
+- Longevity: R code is likely to remain stable over time compared to Python
 
-- Statistics performed on other parts of the code
-  - R as the language of choice for statistics and data visualization
+- Statistics: R is the language of choice for statistics and data visualization, with statistics performed on other parts of the code.
 
-- Ease of use of R Shiny (web application, graphical interface
+- Ease of use of R-Shiny: Allows for web application development and graphical interface creation.
