@@ -1,6 +1,6 @@
 Package: ADSPlanner
 Title: A tool to distribute INSA students into ADS sessions
-Version: 0.0.0.9000
+Version: 0.0
 Authors@R: 
     person("Hector", "Vernet", , "hector.vernet@insa-rennes.fr", role = c("aut", "cre"))
     person("Marie", "Revol", , "marie.revol@insa-rennes.fr", role = c("aut", "cre"))
@@ -10,8 +10,10 @@ Description:
     ADS (Action Découverte des Spécialités) is a teaching module aimed at presenting the specialties of the engineering program at INSA to students in the preparatory program. 
     This module consists of three sessions. Each student is asked to rank the specialties by preference to assign them to the three half-day sessions.
     This package provides a tool to distribute students into sessions based on their preferences.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
