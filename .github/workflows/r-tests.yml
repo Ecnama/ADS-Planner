@@ -23,13 +23,9 @@ jobs:
         with:
           r-version: 'latest'
 
-      - name: Install devtools dependencies
-        run: |
-          Rscript -e 'install.packages(c("usethis", "pkgdown", "rcmdcheck", "rversions", "urlchecker"), repos = "https://cloud.r-project.org/")'
-
       - name: Install dependencies
         run: |
-          Rscript -e 'install.packages("devtools")'
+          Rscript -e 'install.packages("devtools", dependencies = TRUE)'
           Rscript -e 'devtools::install_deps(dep = TRUE)'
 
       - name: Run R tests
