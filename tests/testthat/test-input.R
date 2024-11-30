@@ -56,23 +56,23 @@ test_that("synthesize_wishes throws error for non existing filière", {
 # Testing parse_file
 
 test_that("parse_file returns correct result for a valid input file", {
-    local_mock(read_file = function(file_path) read_file_output)
+    mockr::local_mock(read_file = function(file_path) read_file_output)
     result <- parse_file("../data/test_file.xlsx")
     expect_equal(result, parse_file_output)
 })
 
 test_that("parse_file throws error for invalid input file type", {
-    local_mock(read_file = function(file_path) stop("File type not supported"))
+    mockr::local_mock(read_file = function(file_path) stop("File type not supported"))
     expect_error(parse_file("../data/test_file.csv"), "Error while reading the file : File type not supported")
 })
 
 test_that("parse_file throws error for non existent file", {
-    local_mock(read_file = function(file_path) stop("File does not exist"))
+    mockr::local_mock(read_file = function(file_path) stop("File does not exist"))
     expect_error(parse_file("../data/imaginary_file.xlsx"), "Error while reading the file : File does not exist")
 })
 
 test_that("parse_file throws error for invalid data", {
-    local_mock(
+    mockr::local_mock(
         read_file = function(file_path) read_file_output_invalid,
         synthesize_wishes = function(wishes) stop("Unknown filière")
     )
