@@ -2,7 +2,7 @@
 % Please edit documentation in R/input.R
 \name{synthesize_wishes}
 \alias{synthesize_wishes}
-\title{Synthesizes a student's wishes from multiple columns per filière to 7 columns for all filières}
+\title{Synthesizes a student's wishes from multiple columns per filiere to 7 columns for all filieres}
 \usage{
 synthesize_wishes(wishes)
 }
@@ -10,8 +10,8 @@ synthesize_wishes(wishes)
 \item{wishes}{The wishes columns}
 }
 \value{
-A vector with the filière and the 7 wishes (NA if no wish)
+A vector with the filiere and the 7 wishes (NA if no wish)
 }
 \description{
-Synthesizes a student's wishes from multiple columns per filière to 7 columns for all filières
+Synthesizes a student's wishes from multiple columns per filiere to 7 columns for all filieres
 }
