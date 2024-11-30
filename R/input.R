@@ -1,7 +1,10 @@
 library(openxlsx)
 library(readODS)
 
-source("R/variables.R")
+# Prefixes of the head of the wishes columns
+Q2_PREFIX <- "Q02_Voeux->"
+Q3_PREFIX <- "Q03_VoeuxEMIR->"
+Q4_PREFIX <- "Q04_voeuxMICA->"
 
 #' Reads the file and selects the needed columns
 #'
