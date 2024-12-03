@@ -7,12 +7,15 @@ ui <- page_sidebar(
         card(
             fileInput("file", "R\u00E9sultats du sondage", accept = c(".xlsx", ".ods"), buttonLabel = "Parcourir...", placeholder = "Aucun fichier", multiple = FALSE),
         ),
-        downloadButton("download", "T\u00E9l\u00E9charger affectations"),
+        card(
+            textInput("download_name", "Nom du fichier d'affectations", value = "affectations"),
+            uiOutput("download_button"),
+        ),
     ),
     navset_tab(
         nav_panel(
             "Visualisation des choix",
-            "Not implemented yet.",
+            tableOutput("vis_table"),
         ),
         nav_panel(
             "Sans r\u00E9ponse",
@@ -21,6 +24,8 @@ ui <- page_sidebar(
         nav_panel(
             "Affectations",
             "Not implemented yet.",
+            actionButton("assign_first", "Auto-assigner premier voeu"),
+            actionButton("assign_second", "Auto-assigner deuxi\u00E8me voeu"),
         ),
     ),
 )
