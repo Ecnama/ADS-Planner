@@ -18,6 +18,8 @@ ADSPlanner::run()
 
 The web interface should open automatically. If it doesn't, you can open the link next to `Browsing` in the command output.
 
+For development purposes, rather than reinstalling the app, it is possible to use `devtools::load_all()` to "fake install" it, which is quicker and reloads everything automatically.
+
 ## ADS
 
 ADS (Action Découverte des Spécialités) is a teaching module aimed at presenting the specialties of the engineering program at INSA to students in the preparatory program. This module consists of three sessions. Each student is asked to rank the specialties by preference to assign them to the three half-day sessions.

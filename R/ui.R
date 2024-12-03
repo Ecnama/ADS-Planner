@@ -11,10 +11,15 @@ ui <- page_sidebar(
             textInput("download_name", "Nom du fichier d'affectations", value = "affectations"),
             uiOutput("download_button"),
         ),
+        card(
+            "Filtres",
+            uiOutput("filter_filiere"),
+            textInput("filter_search", "Rechercher :"),
+        ),
     ),
     navset_tab(
         nav_panel(
-            "Visualisation des choix",
+            "Visualisation des voeux",
             tableOutput("vis_table"),
         ),
         nav_panel(
