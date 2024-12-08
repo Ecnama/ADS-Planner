@@ -29,16 +29,19 @@ server <- function(input, output) {
             "Fili\u00E8res :",
             data()$Filiere,
             multiple = TRUE,
-            selected = data()$Filiere,
         )
     )
 
     filtered_data <- reactive({
         filtered_data <- data()
-        filtered_data <- filtered_data[filtered_data$Filiere %in% input$select_filiere, ]
+        if (length(input$select_filiere) > 0) {
+            filtered_data <- filtered_data[filtered_data$Filiere %in% input$select_filiere, ]
+        }
         filtered_data <- filtered_data[
             grepl(tolower(input$filter_search), tolower(filtered_data[["Nom"]]), fixed = TRUE)
-            | grepl(tolower(input$filter_search), tolower(filtered_data[["Prenom"]]), fixed = TRUE),
+            | grepl(tolower(input$filter_search), tolower(filtered_data[["Prenom"]]), fixed = TRUE)
+            | grepl(tolower(input$filter_search), tolower(paste(filtered_data[["Prenom"]], filtered_data[["Nom"]])), fixed = TRUE)
+            | grepl(tolower(input$filter_search), tolower(paste(filtered_data[["Nom"]], filtered_data[["Prenom"]])), fixed = TRUE),
         ]
         filtered_data
     })
