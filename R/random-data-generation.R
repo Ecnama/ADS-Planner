@@ -1,5 +1,5 @@
-install.packages("openxlsx",lib = "/home/noemie/R/création_dataframe")
-library(openxlsx, lib.loc = "/home/noemie/R/création_dataframe")
+
+library(openxlsx)
 
 prenoms <- c("Hector","Mari","Amance","Peter","Nathalie","Agathe","Romain","Eve","Marc","Enzo")
 noms <- c("Dupont","Nguyen","Martin","Garcia","Fouquier","Dubois","Jack","Boisu","Zaky","Mathy")
