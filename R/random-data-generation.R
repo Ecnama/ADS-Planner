@@ -51,6 +51,4 @@ df_voeux <- as.data.frame(df_voeux)
 df_final <- cbind(df, df_voeux)
 
 # affichage
-print(df_final)
-View(df_final)
 write.xlsx(df_final,"resultatfinal.xlsx")
