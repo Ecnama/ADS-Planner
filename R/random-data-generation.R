@@ -1,4 +1,3 @@
-
 library(openxlsx)
 
 prenoms <- c("Hector","Mari","Amance","Peter","Nathalie","Agathe","Romain","Eve","Marc","Enzo")
@@ -54,4 +53,4 @@ df_final <- cbind(df, df_voeux)
 # affichage
 print(df_final)
 View(df_final)
-write.xlsx(df_final,"/home/noemie/R/création_dataframe/ecrire.xlsx")
+write.xlsx(df_final,"resultatfinal.xlsx")
