@@ -1,5 +1,6 @@
 library(bslib)
 
+#' Frontend UI layout
 ui <- page_sidebar(
     title = "ADS-Planner",
     sidebar = sidebar(
@@ -19,18 +20,24 @@ ui <- page_sidebar(
     ),
     navset_tab(
         nav_panel(
-            "Visualisation des voeux",
-            tableOutput("vis_table"),
+            "Visualisation v\u0153ux",
+            uiOutput("vis_table"),
         ),
         nav_panel(
             "Sans r\u00E9ponse",
             "Not implemented yet.",
         ),
         nav_panel(
-            "Affectations",
+            "Affectations d\u00E9partements",
+            div(
+                actionButton("assign_hard", "Affectation \"dure\""),
+                actionButton("assign_real", "Affectation r\u00E9elle"),
+            ),
             "Not implemented yet.",
-            actionButton("assign_first", "Auto-assigner premier voeu"),
-            actionButton("assign_second", "Auto-assigner deuxi\u00E8me voeu"),
         ),
+        nav_panel(
+            "Affectations sessions",
+            "Not implemented yet.",
+        )
     ),
 )

@@ -2,12 +2,23 @@ library(shiny)
 
 source("R/input.R")
 
+#' Backend server logic
+#' @param input Input data from the frontend
+#' @param output Output data the frontend will receive
 server <- function(input, output) {
     data <- reactive({
         if (is.null(input$file)) {
             return(NULL)
         }
         parse_file(input$file$datapath[1])
+    })
+
+    observeEvent(input$assign_hard, {
+        showNotification("Not implemented yet.", type = "warning")
+    })
+
+    observeEvent(input$assign_real, {
+        showNotification("Not implemented yet.", type = "warning")
     })
 
     output$download_button <- renderUI({
@@ -46,7 +57,16 @@ server <- function(input, output) {
         filtered_data
     })
 
-    output$vis_table <- renderTable({
-        filtered_data()[, !grepl("^Aff", names(filtered_data()))]
-    }, striped = TRUE)
+    output$vis_table <- reactive({
+        if (is.null(input$file)) {
+            HTML('<div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-weight: bold;">Veuillez charger un fichier pour commencer.</div>')
+        } else {
+            renderTable(
+                {
+                    filtered_data()[, !grepl("^Aff", names(filtered_data()))]
+                },
+                striped = TRUE
+            )
+        }
+    })
 }
