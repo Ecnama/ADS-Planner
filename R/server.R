@@ -57,16 +57,18 @@ server <- function(input, output) {
         filtered_data
     })
 
-    output$vis_table <- reactive({
+    output$vis_table <- renderTable(
+        {
+            filtered_data()[, !grepl("^Aff", names(filtered_data()))]
+        },
+        striped = TRUE
+    )
+
+    output$vis <- renderUI({
         if (is.null(input$file)) {
             HTML('<div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-weight: bold;">Veuillez charger un fichier pour commencer.</div>')
         } else {
-            renderTable(
-                {
-                    filtered_data()[, !grepl("^Aff", names(filtered_data()))]
-                },
-                striped = TRUE
-            )
+            tableOutput("vis_table")
         }
     })
 }

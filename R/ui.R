@@ -21,7 +21,7 @@ ui <- page_sidebar(
     navset_tab(
         nav_panel(
             "Visualisation v\u0153ux",
-            uiOutput("vis_table"),
+            uiOutput("vis"),
         ),
         nav_panel(
             "Sans r\u00E9ponse",
