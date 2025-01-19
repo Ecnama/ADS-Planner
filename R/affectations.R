@@ -9,9 +9,9 @@ NB_SESSIONS <- c(
 #'
 #' @param df The data frame with the students and their wishes
 assign_depart_erase <- function(df) {
-    df$Aff_depart_1 <- NA
-    df$Aff_depart_2 <- NA
-    df$Aff_depart_3 <- NA
+    df$Aff_depart_1 <- NA_character_
+    df$Aff_depart_2 <- NA_character_
+    df$Aff_depart_3 <- NA_character_
     df
 }
 

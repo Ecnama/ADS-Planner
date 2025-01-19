@@ -165,5 +165,5 @@ parse_file_output <- data.frame(
     Aff_depart_3 = c(NA_character_, NA_character_, NA_character_),
     Aff_session_1 = c(NA_character_, NA_character_, NA_character_),
     Aff_session_2 = c(NA_character_, NA_character_, NA_character_),
-    Aff_session_3 = c(NA_character_, NA_character_, NA_character_),
+    Aff_session_3 = c(NA_character_, NA_character_, NA_character_)
 )
